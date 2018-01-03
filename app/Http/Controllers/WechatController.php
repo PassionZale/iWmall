@@ -31,12 +31,13 @@ class WechatController extends Controller
     public function serve()
     {
 
-        $wechat = app('wechat');
+        $wechat = app('wechat.official_account');
         $server = $wechat->server;
         $userApi = $wechat->user;
 
-        $server->setMessageHandler(function ($message) use ($userApi) {
+        $server->push(function ($message) use ($userApi) {
             // 获取当前粉丝openId
+            Log::info('message arrived.', $message);
             $openid = $message->FromUserName;
             if ($message->MsgType == 'event') {
                 switch ($message->Event) {
@@ -58,7 +59,9 @@ class WechatController extends Controller
                             $follow['is_subscribed'] = 2;
                             WechatFollow::where('openid', '=', $openid)->update($follow);
                             $welcome = "欢迎回来，" . $user->nickname ."\n\n进入商城闲逛一会吧，\n\n<a href=\"http://imall.lovchun.com/mall#!/index\">点击进入</a>";
+                            Log::info('request arrived.', $welcome); 
                             return $welcome;
+
                         } else {
                             // 录入数据库
                             $follow = new WechatFollow();
@@ -75,6 +78,7 @@ class WechatController extends Controller
                             $follow->is_subscribed = 2;
                             $follow->save();
                             $welcome = "欢迎，" . $user->nickname ."\n\n进入商城闲逛一会吧，\n\n<a href=\"http://imall.lovchun.com/mall#!/index\">点击进入</a>";
+                            Log::info('request arrived.', $welcome); 
                             return $welcome;
                         }
                         break;
@@ -88,6 +92,7 @@ class WechatController extends Controller
             } else {
                 $user = $userApi->get($openid);
                 $welcome = "欢迎，" . $user->nickname ."\n\n进入商城闲逛一会吧，\n\n<a href=\"http://imall.lovchun.com/mall#!/index\">点击进入</a>";
+                Log::info('request arrived.', $welcome); 
                 return $welcome;
             }
         });

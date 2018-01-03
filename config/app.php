@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Lavary\Menu\ServiceProvider::class,
-        Overtrue\LaravelWechat\ServiceProvider::class,
+        Overtrue\LaravelWeChat\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
     ],
 
