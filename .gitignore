@@ -25,3 +25,4 @@ nbproject/
 /public/storage
 .gitignore
 public/js/mall/*.map
+public/css/*.map
