@@ -33,36 +33,7 @@
     <div class="row">
 
         <div class="col-md-6">
-            <h2 class="font-bold">Welcome to iMall</h2>
-
-            <p>
-                Login in. To see it in action.
-            </p>
-
-            <p>
-                If there is any bug or suggestion,
-            </p>
-
-            <p>
-                please commit your issue @ <a href="https://github.com/PassionZale/iMall/issues" target="_blank">iMall Issues</a>.
-            </p>
-
-            <p>
-                iMall is still developing ,
-            </p>
-
-            <p>
-                please do not delete any data after login.
-            </p>
-
-            <p>
-                The current version of iMall is basic ,
-            </p>
-
-            <p>
-                more features will be developed...
-            </p>
-
+            <h2 class="font-bold">Welcome to iMall.</h2>
         </div>
         <div class="col-md-6">
             <div class="ibox-content">
