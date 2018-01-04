@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Mint from 'mint-ui'
-import {InfiniteScroll,Indicator} from 'mint-ui';
+import { InfiniteScroll, Indicator } from 'mint-ui';
 import axios from 'axios'
 import Router from 'vue-router'
 import routerMap from './router'
@@ -32,7 +32,7 @@ Vue.filter('rnTransform', function (value) {
  * 数据列表无限滚动监听
  */
 Vue.directive('data-scroll', function (value) {
-    window.addEventListener('scroll', ()=> {
+    window.addEventListener('scroll', () => {
         let fnc = value;
         fnc();
     });
@@ -58,7 +58,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 const router = new Router({
     history: false,
-    mode: 'abstract'
+    mode: 'hash'
 });
 
 routerMap(router);

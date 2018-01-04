@@ -23,12 +23,7 @@
     <link href="{{asset('js/lib/mint-ui/mint-ui.css')}}" rel="stylesheet">
     <link href="{{asset('js/lib/swiper/swiper.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/mall.css')}}" rel="stylesheet">
-    <style>
-        input,i, select, textarea, button:focus {
-            outline: 0 none !important;
-        }
-        a,i,button,input,li,span{-webkit-tap-highlight-color:rgba(255,0,0,0);}
-    </style>
+    
 </head>
 <body>
 <!-- JavaScripts -->
@@ -37,10 +32,12 @@
 <script src="{{ asset('js/lib/swiper/swiper.min.js') }}"></script>
 <script src="{{ asset('js/mall/app.js') }}"></script>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<!-- wx jssdk config -->
 <script>
     <?php if($config){ ?>
         wx.config(<?php echo $config; ?>);
     <?php }?>
 </script>
+<!-- wx jssdk config end -->
 </body>
 </html>

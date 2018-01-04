@@ -49,7 +49,7 @@ Route::any('/wechat', 'WechatController@serve');
 
 // 微信商城
 // Route::group(['prefix' => 'mall', 'middleware' => ['web', 'wechat.oauth'], 'namespace' => 'Mall'], function () {
-Route::group(['prefix' => 'mall', 'namespace' => 'Mall'], function () {
+Route::group(['prefix' => 'mall/', 'namespace' => 'Mall'], function () {
     // Wechat OAuth2.0 (type=snsapi_userinfo)
     Route::get('/user', 'IndexController@oauth');
     // 首页
