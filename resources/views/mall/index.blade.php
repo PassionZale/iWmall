@@ -19,9 +19,9 @@
     <![endif]-->
 
     <!-- Styles -->
-    <link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+    <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
     <link href="{{asset('js/lib/mint-ui/mint-ui.css')}}" rel="stylesheet">
-    <link href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.min.css" rel="stylesheet">
+    <link href="{{asset('js/lib/swiper/swiper.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/mall.css')}}" rel="stylesheet">
     <style>
         input,i, select, textarea, button:focus {
@@ -34,7 +34,7 @@
 <!-- JavaScripts -->
 <script src="{{ asset('js/lib/jquery/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ asset('js/lib/distpicker/distpicker.min.js') }}"></script>
-<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src="{{ asset('js/lib/swiper/swiper.min.js') }}"></script>
 <script src="{{ asset('js/mall/app.js') }}"></script>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
