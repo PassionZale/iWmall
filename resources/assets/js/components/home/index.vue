@@ -1,5 +1,6 @@
 <template>
   <div class="home-page">
+    
     <carousel />
     <topic />
     <plate />
