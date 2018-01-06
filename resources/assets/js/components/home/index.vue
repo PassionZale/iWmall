@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    
+    <!-- <mt-cell class="page-part" title="标题" :value="selected" /> -->
     <carousel />
     <topic />
     <plate />

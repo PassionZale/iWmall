@@ -21,7 +21,6 @@
     <!-- Styles -->
     <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
     <link href="{{asset('js/lib/mint-ui/mint-ui.css')}}" rel="stylesheet">
-    <link href="{{asset('js/lib/swiper/swiper.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/mall.css')}}" rel="stylesheet">
     
 </head>
@@ -31,7 +30,6 @@
 <!-- JavaScripts -->
 <script src="{{ asset('js/external/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ asset('js/external/distpicker.min.js') }}"></script>
-<script src="{{ asset('js/external/swiper.min.js') }}"></script>
 
 <script src="{{ asset('js/mall/index.js') }}"></script>
 
