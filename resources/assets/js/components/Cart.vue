@@ -1,5 +1,4 @@
 <template>
-
     <div id="cart-container" v-show="!emptyVisible">
         <section class="cart-wrap" v-for="cart in carts">
             <i class="select-one-btn" :class="cart.selected ? 'selected' : '' " @click="toggleSelect(cart)">
