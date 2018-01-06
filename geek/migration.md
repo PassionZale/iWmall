@@ -1,4 +1,5 @@
 # 生成迁移
+
    ``` shell
    # wechat_follow 微信粉丝表
    php artisan make:migration create_wechat_follow_table --create=wechat_follow

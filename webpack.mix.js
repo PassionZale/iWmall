@@ -13,6 +13,7 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/index.js', 'public/js/mall/')
     .sass('resources/assets/sass/mall.scss', 'public/css')
+    .sass('resources/assets/sass/admin.scss', 'public/css')
     .options({
         postCss: [
             require('postcss-css-variables')()
@@ -20,4 +21,3 @@ mix.js('resources/assets/js/index.js', 'public/js/mall/')
     })
     .copy('resources/assets/js/external', 'public/js/external')
     .copy('resources/assets/css', 'public/css')
-    // .copy('resources/assets/images', 'public/images')

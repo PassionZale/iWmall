@@ -59,6 +59,15 @@ class ShopController extends Controller
         return response()->json($categories);
     }
 
+    // get goods by page
+    public function getGoods(Request $request) {
+        $goods = ProductCommodity::where('commodity_disabled', '=', '已上架')
+            ->orderBy('updated_at', 'desc')
+            ->paginate(10);
+
+        return response()->json($goods);
+    }
+
     public function getCommodityByTopic(Request $request)
     {
         $id = $request->input('topic_id');

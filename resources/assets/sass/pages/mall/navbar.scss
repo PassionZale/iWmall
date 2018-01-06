@@ -3,9 +3,14 @@
   height: 55px;
 }
 
+.mint-tab-item-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .mint-tabbar {
   & > .mint-tab-item.is-selected {
-    color: #09bb07;
+    color: #09bb07 !important;
     .nav-index {
       background-image: url("/images/icon/nav-index-active.png");
     }

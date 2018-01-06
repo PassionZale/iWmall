@@ -1,13 +1,20 @@
 <template>
     <div class="plate-wrapper">
-        <a
-            v-for="plate in plates" 
-            href="/plate/{plage.id}"
-            :key="plate.id"
+      <div class="pure-g">
+        <div 
+          class="pure-u-1-2 plate-card"
+          v-for="plate in plates" 
+          :key="plate.id"
         >
-            <img :src="plate.plate_img"/>
-        </a>
-    </div>
+          <a href="/plate/{plage.id}">
+            <img class="plate-img" :src="plate.plate_img"/>
+            <p class="plate-title">
+              {{plate.plate_title}}
+            </p>
+          </a>
+        </div>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -32,11 +39,16 @@ export default {
 };
 </script>
 
-<style scoped>
-img {
+<style>
+.plate-img {
   display: block;
   width: 100%;
   height: auto;
   margin-bottom: 10px;
 }
+
+.plate-card {
+  padding: 16px;
+}
+
 </style>

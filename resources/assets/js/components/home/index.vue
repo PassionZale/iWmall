@@ -1,9 +1,10 @@
 <template>
-  <div class="home-page">
-    <!-- <mt-cell class="page-part" title="标题" :value="selected" /> -->
+  <div class="page-home">
+    <mt-header title="long long long long title" />
     <carousel />
     <topic />
     <plate />
+    <goods />
   </div>
 </template>
 
@@ -12,13 +13,15 @@
 import carousel from './carousel.vue';
 import topic from './topic.vue';
 import plate from './plate.vue';
+import goods from './goods.vue';
 
 export default {
   name: 'home-container',
   components: {
     carousel,
     topic,
-    plate
+    plate,
+    goods
   }
 };
 
