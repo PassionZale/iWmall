@@ -27,9 +27,12 @@
         </div>
         <div class="order-detail-wrapper">
             <div class="detail-container">
-                <div class="commodity-list"
-                     v-for="detail in order.details"
-                     v-link="{name:'commodity',params:{'hashid':detail.commodity_id}}">
+                <div 
+                    class="commodity-list"
+                    v-for="(detail,index) in order.details"
+                    v-link="{name:'commodity',params:{'hashid':detail.commodity_id}}"
+                    :key={index}
+                >
                     <img :src="detail.commodity_img" alt="{{detail.commodity_name}}"/>
                     <div class="commodity-name">
                         <p>{{detail.commodity_name}}</p>

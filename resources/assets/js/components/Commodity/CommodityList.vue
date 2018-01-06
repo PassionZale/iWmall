@@ -1,6 +1,11 @@
 <template>
     <div id="list-data-container">
-        <div v-for="item in list" class="list-data-wrapper" v-link="{name:'commodity',params:{hashid:item.id}}">
+        <div
+            v-for="(item, index) in list"
+            class="list-data-wrapper"
+            v-link="{name:'commodity',params:{hashid:item.id}}"
+            :key={index}
+        >
             <img :src="item.commodity_img" alt="item.commodity_name"/>
             <div class="data-info-wrapper">
                 <p class="title">
@@ -13,7 +18,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>

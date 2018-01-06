@@ -5,10 +5,13 @@
                 <img src="/images/common/add.png" width="24" height="24">
             </mt-cell>
         </div>
-        <div class="uc-address-part"
-             v-for="address in addresses"
-             v-link="{name:'edit-address',params:{'hashid':address.id}}"
-             :class="address.defaulted == 1 ? 'defaulted-address' : '' ">
+        <div
+            class="uc-address-part"
+            v-for="(address, index) in addresses"
+            v-link="{name:'edit-address',params:{'hashid':address.id}}"
+            :class="address.defaulted == 1 ? 'defaulted-address' : '' "
+            :key="index"
+        >
             <mt-cell
                     :title="address.name"
                     :label="address.defaulted == 1 ? '默认地址' : '' ">

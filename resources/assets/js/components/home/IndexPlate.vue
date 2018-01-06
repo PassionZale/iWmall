@@ -1,6 +1,6 @@
 <template>
     <div class="plate-wrapper">
-        <a v-link="{name:'aPlate',params:{'hashid':plate.id}}" v-for="plate in plates">
+        <a v-link="{name:'aPlate',params:{'hashid':plate.id}}" v-for="(plate, index) in plates" :key={index}>
             <img :src="plate.plate_img"/>
         </a>
     </div>
