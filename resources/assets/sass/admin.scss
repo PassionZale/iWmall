@@ -1,7 +1,9 @@
 //后台样式
-@import 'base.scss';
-@import 'sidebar.scss';
-@import 'table.scss';
+@import './pages/admin/global.scss';
+@import './pages/admin/base.scss';
+@import './pages/admin/sidebar.scss';
+@import './pages/admin/table.scss';
+@import './pages/admin/dnd.scss';
 
 .img-thumbnail {
   max-width: 200px;

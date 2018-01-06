@@ -1,24 +1,29 @@
 <template>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div
-        class="swiper-slide"
+  <div class="swipe-container">
+    <mt-swipe :auto="3000">
+      <mt-swipe-item
         v-for="banner in banners"
         :key="banner.img_url"
       >
-        <a :href="banner.redirect_url">
-            <img :src="banner.img_url"/>
-        </a>
-      </div>
-      </div>
-      <div class="swiper-pagination"></div>
+        <router-link to="home">
+          <img class="swiper-img" :src="banner.img_url"/>
+        </router-link>
+      </mt-swipe-item>
+    </mt-swipe>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      banners: []
+      banners: [],
+      swipeConf: {
+        speed: 300, //	duration of the animation(in millisecond)	Number		300
+        auto: 300, //interval of auto-play(in millisecond)	Number		3000
+        defaultIndex: 0, //	index of the initially visible slide	Number		0
+        continuous: true, //	if an infinite slider without endpoints is created	Boolean		true
+        showIndicators: true,
+      }
     };
   },
   created() {
@@ -33,26 +38,18 @@ export default {
           this.banners = data;
         });
     }
-  },
-  mounted() {
-    let swiper = new Swiper(".swiper-container", {
-      autoplay: 4000,
-      loop: true,
-      resizeReInit: true,
-      pagination: ".swiper-pagination",
-      observer: true,
-      observeParents: true
-    });
   }
 };
 </script>
-<style scoped>
-.swiper-container {
-  width: 100%;
-  height: 180px;
+<style>
+
+.swipe-container {
+  height: 300px;
 }
-img {
-  width: 100%;
-  height: auto;
+
+.swiper-img {
+  height: 100%;
+  width: auto;
 }
+
 </style>

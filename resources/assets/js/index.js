@@ -3,13 +3,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 
-import Mint, { InfiniteScroll, Indicator } from 'mint-ui';
-
+import Mint from 'mint-ui';
 import App from './App.vue'
 
 Vue.use(Mint);
-Vue.use(InfiniteScroll);
 Vue.use(VueRouter);
+
+import 'mint-ui/lib/style.css';
+import 'purecss/build/pure.css';
 
 /**
  * 价格转换为0.00的浮点数

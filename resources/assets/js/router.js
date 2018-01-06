@@ -6,11 +6,12 @@ const routes = [
         name: 'home',
         component: require('./components/home')
     },
+    {
+        path: '/category',
+        name: 'category',
+        component: require('./components/category')
+    }, 
     // {
-    //     path: '/category',
-    //     name: 'category',
-    //     component: require('./components/Category.vue')
-    // }, {
     //     path: '/:hashid/commodity',
     //     name: 'commodity',
     //     component: require('./components/Commodity/CommodityDetail.vue')

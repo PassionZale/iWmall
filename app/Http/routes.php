@@ -57,6 +57,8 @@ Route::group(['prefix' => 'mall/', 'namespace' => 'Mall'], function () {
 });
 
 Route::group(['prefix' => 'api', 'middleware' => 'web', 'namespace' => 'Api'], function () {
+    // get goods list
+    Route::get('goods', 'ShopController@getGoods');
     // 获取用户信息
     Route::get('userinfo', 'UserController@userinfo');
     // 商铺配置

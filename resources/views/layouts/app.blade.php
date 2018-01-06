@@ -11,15 +11,11 @@
     <!-- Favicon -->
     <link rel="icon" href="{{asset('favicon.png')}}" mce_href="{{asset('favicon.png')}}" type="image/png">
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" mce_href="{{asset('favicon.ico')}}" type=”image/x-icon”>
-
     <!--[if lte IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
     <![endif]-->
-
     <!-- Fonts -->
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
     <!-- Styles -->
     <link href="{{asset('inspinia/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('inspinia/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -27,7 +23,8 @@
     <link href="{{asset('inspinia/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('inspinia/css/style.css')}}" rel="stylesheet">
 
-    <link href="{{asset('css/global.css')}}" rel="stylesheet">
+    <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
+    <link href="{{asset('css/admin.css')}}" rel="stylesheet">
 
 </head>
 <body>

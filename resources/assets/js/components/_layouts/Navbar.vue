@@ -1,26 +1,26 @@
 <template>
-  <div class="app-page">
-      <div id="nav-hot-fix"></div>
-      <mt-tabbar v-model="selected" fixed>
-        <mt-tab-item id="home">
-            <i slot="icon" class="nav-index"></i>
-            首页
-        </mt-tab-item>
-        <mt-tab-item id="category">
-            <i slot="icon" class="nav-category"></i>
-            全部产品
-        </mt-tab-item>
-        <mt-tab-item id="cart">
-            <i slot="icon" class="nav-cart">
-              <mt-badge type="error" size="small" v-if="cart > 0">{{cart}}</mt-badge>
-            </i>
-            购物车
-        </mt-tab-item>
-        <mt-tab-item id="profile">
-            <i slot="icon" class="nav-usercenter"></i>
-            账户中心
-        </mt-tab-item>
-      </mt-tabbar>
+  <div class="app-tab--bar">
+    <div id="nav-hot-fix"></div>
+    <mt-tabbar v-model="selected" fixed>
+      <mt-tab-item id="home">
+          <i slot="icon" class="nav-index"></i>
+          首页
+      </mt-tab-item>
+      <mt-tab-item id="category">
+          <i slot="icon" class="nav-category"></i>
+          全部产品
+      </mt-tab-item>
+      <mt-tab-item id="cart">
+          <i slot="icon" class="nav-cart">
+            <mt-badge type="error" size="small" v-if="cart > 0">{{cart}}</mt-badge>
+          </i>
+          购物车
+      </mt-tab-item>
+      <mt-tab-item id="profile">
+          <i slot="icon" class="nav-usercenter"></i>
+          账户中心
+      </mt-tab-item>
+    </mt-tabbar>
   </div>
 </template>
 

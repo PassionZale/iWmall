@@ -69,6 +69,184 @@ body {
   display: block;
 }
 
+table tr {
+  cursor: pointer;
+}
+
+table th.limit-width,
+table td.limit-width {
+  max-width: 200px !important;
+}
+
+table .del-form {
+  display: inline-block;
+}
+
+table .edit-btn,
+table .del-btn {
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+}
+
+table .edit-btn:hover,
+table .del-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+table .edit-btn {
+  color: #3c763d;
+}
+
+table .del-btn {
+  color: #a94442;
+}
+
+table img.head-img-url {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+table img.banner-img-url {
+  max-width: 100px;
+  max-height: 50px;
+}
+
+table img.topic-img-url,
+table img.category-img-url {
+  width: 50px;
+  height: 50px;
+}
+
+table img.plate-img-url,
+table img.commodity-img-url {
+  width: 100px;
+  height: 50px;
+}
+
+input,
+i,
+select,
+textarea,
+button:focus {
+  outline: 0 none !important;
+}
+
+a,
+i,
+button,
+input,
+li,
+span {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.notice {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  padding: 0 40px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.img-thumbnail {
+  max-width: 200px;
+  height: 100px;
+}
+
+.tree-container {
+  margin-top: 15px;
+  font-size: 10px;
+}
+
+.form-small-text {
+  font-size: 10px;
+}
+
+.form-small-text textarea {
+  font-size: 10px;
+  color: gray;
+}
+
+.form-small-text textarea#editor {
+  width: 100%;
+  min-height: 300px;
+}
+
+::-webkit-scrollbar {
+  padding-left: 1px;
+  background-color: #eee;
+  overflow: visible;
+  width: 7px;
+  height: 7px;
+  margin-top: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #34495e;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  min-height: 15px;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: 1px solid #fff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+input,
+select,
+textarea,
+button:focus {
+  outline: 0 none !important;
+}
+
+.fn-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body {
+  font-family: 'Microsoft YaHei','\5FAE\8F6F\96C5\9ED1','Hiragino Sans GB', tahoma,arial,sans-serif;
+}
+
+.fa-btn {
+  margin-right: 6px;
+}
+
+#scriptTag {
+  display: none;
+}
+
+.__hide__ {
+  display: none;
+}
+
+.__show__ {
+  display: block;
+}
+
 #menu {
   margin: 0;
   padding: 0;
@@ -181,6 +359,42 @@ table img.plate-img-url,
 table img.commodity-img-url {
   width: 100px;
   height: 50px;
+}
+
+#dnd-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: #0080ff;
+  border-radius: 50%;
+  z-index: 900;
+  top: 400px;
+  left: 5px;
+  float: right;
+  opacity: 0.6;
+}
+
+#dnd-icon.is-dragging {
+  opacity: 1;
+  border: 1px solid #0080ff;
+  width: 36px;
+  height: 36px;
+}
+
+#dnd-icon.is-pointer-down {
+  background: #0099FF;
+}
+
+#dnd-mask {
+  z-index: 800;
+  position: fixed;
+  top: 80%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #333333;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
 }
 
 .img-thumbnail {

@@ -6,7 +6,7 @@
         id="topic.topic_title"
         :key="topic.id"
     >
-        <img slot="icon" :src="topic.topic_img" />
+        <img slot="icon" class="topic-icon" :src="topic.topic_img" />
         {{topic.topic_title}}
     </mt-tab-item>
   </mt-navbar>
@@ -31,9 +31,10 @@ export default {
   }
 };
 </script>
+<style>
 
-<style scoped>
-.mint-navbar .mint-tab-item.is-selected {
-  color: #333;
+.topic-icon {
+  border-radius: 50%;
 }
+
 </style>
