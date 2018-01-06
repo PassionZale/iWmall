@@ -5,8 +5,11 @@
                 <img src="/images/common/add.png" width="24" height="24">
             </mt-cell>
         </div>
-        <div class="uc-address-part"
-             v-for="address in addresses">
+        <div
+            class="uc-address-part"
+            v-for="(address, index) in addresses"
+            :key={index}
+        >
             <mt-cell
                     :title="address.name"
                     :label="address.defaulted == 1 ? '默认地址' : '' "
@@ -21,16 +24,7 @@
         </div>
     </div>
 </template>
-<style>
-.edit-address-btn{
-    display:inline-block;
-    width:20px;
-    height:20px;
-    background-image:url('/images/icon/address-edit-icon.png');
-    background-repeat:no-repeat;
-    background-size:20px 20px;
-}
-</style>
+
 <script>
     import { Cell } from 'mint-ui';
     import { Indicator } from 'mint-ui';
@@ -88,3 +82,13 @@
         }
     }
 </script>
+<style>
+.edit-address-btn{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background-image:url('/images/icon/address-edit-icon.png');
+    background-repeat:no-repeat;
+    background-size:20px 20px;
+}
+</style>

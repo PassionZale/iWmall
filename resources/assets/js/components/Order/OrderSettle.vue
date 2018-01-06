@@ -24,7 +24,7 @@
             </div>
         </div>
         <div id="cart-container">
-            <section class="cart-wrap" v-for="good in goods">
+            <section class="cart-wrap" v-for="(good, index) in goods" :key={index}>
                 <i class="select-one-btn selected">
                 </i>
                 <a class="img-wrap">

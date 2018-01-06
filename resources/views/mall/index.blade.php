@@ -26,11 +26,15 @@
     
 </head>
 <body>
+<div class="app-root" id="app"></div>
+
 <!-- JavaScripts -->
-<script src="{{ asset('js/lib/jquery/jquery-2.1.1.min.js') }}"></script>
-<script src="{{ asset('js/lib/distpicker/distpicker.min.js') }}"></script>
-<script src="{{ asset('js/lib/swiper/swiper.min.js') }}"></script>
-<script src="{{ asset('js/mall/app.js') }}"></script>
+<script src="{{ asset('js/external/jquery-2.1.1.min.js') }}"></script>
+<script src="{{ asset('js/external/distpicker.min.js') }}"></script>
+<script src="{{ asset('js/external/swiper.min.js') }}"></script>
+
+<script src="{{ asset('js/mall/index.js') }}"></script>
+
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <!-- wx jssdk config -->
 <script>
