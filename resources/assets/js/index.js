@@ -6,7 +6,6 @@ import axios from 'axios';
 import Mint, { InfiniteScroll, Indicator } from 'mint-ui';
 
 import App from './App.vue'
-import { AppRouter } from './router'
 
 Vue.use(Mint);
 Vue.use(InfiniteScroll);
@@ -56,8 +55,6 @@ Vue.prototype.$http = axios;
 
 axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('#csrf-token').getAttribute('content');
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-App.router = AppRouter
 
 new Vue(App);
 

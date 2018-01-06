@@ -1,74 +1,69 @@
 <template>
-    <div class="app-page">
-        <div id="nav-hot-fix" v-show="active"></div>
-        <mt-tabbar :selected.sync="selected" :fixed="true" v-show="active">
-            <mt-tab-item v-link="{name:'index'}" id="index">
-                <i slot="icon" class="nav-index"></i>
-                首页
-            </mt-tab-item>
-            <mt-tab-item v-link="{name:'category'}" id="category">
-                <i slot="icon" class="nav-category"></i>
-                全部产品
-            </mt-tab-item>
-            <mt-tab-item v-link="{name:'cart'}" id="cart">
-                <i slot="icon" class="nav-cart">
-                    <mt-badge type="error" size="small" v-show="cartCount > 0">{{cartCount}}</mt-badge>
-                </i>
-                购物车
-            </mt-tab-item>
-            <mt-tab-item v-link="{name:'usercenter'}" id="usercenter">
-                <i slot="icon" class="nav-usercenter"></i>
-                账户中心
-            </mt-tab-item>
-        </mt-tabbar>
-    </div>
+  <div class="app-page">
+      <div id="nav-hot-fix"></div>
+      <mt-tabbar v-model="selected" fixed>
+        <mt-tab-item id="home">
+            <i slot="icon" class="nav-index"></i>
+            首页
+        </mt-tab-item>
+        <mt-tab-item id="category">
+            <i slot="icon" class="nav-category"></i>
+            全部产品
+        </mt-tab-item>
+        <mt-tab-item id="cart">
+            <i slot="icon" class="nav-cart">
+              <mt-badge type="error" size="small" v-if="cart > 0">{{cart}}</mt-badge>
+            </i>
+            购物车
+        </mt-tab-item>
+        <mt-tab-item id="profile">
+            <i slot="icon" class="nav-usercenter"></i>
+            账户中心
+        </mt-tab-item>
+      </mt-tabbar>
+  </div>
 </template>
 
 <script>
-import { Tabbar, TabItem, Badge } from "mint-ui";
 
 export default {
   data() {
     return {
-      selected: "",
-      cartCount: 0,
+      selected: 'home',
+      cart: 0,
       active: true
-    };
-  },
-  components: {
-    Tabbar,
-    TabItem,
-    Badge
+    }
   },
   created() {
     this.initRoute();
     this.initCartCount();
   },
   watch: {
-    "$route.name": {
-      handler: function(val) {
-        this.routeHandler(val);
-      }
+    // watch tabbar selected value
+    selected: function(val) {
+      console.log(val)
+      this.routeHandler(val);
     }
   },
   methods: {
     initRoute: function() {
       this.routeHandler(this.$route.name);
     },
+
     initCartCount: function() {
-      let count = localStorage.getItem("cartCount");
+      let count = localStorage.getItem("cart");
       if (count) {
-        this.$set("cartCount", count);
+        this.cart = count || 0;
       }
     },
-    routeHandler: function(val) {
-      let activeRouteNames = ["index", "category", "usercenter"];
-      if (activeRouteNames.indexOf(val) >= 0) {
-        this.$set("active", true);
-      } else {
-        this.$set("active", false);
+
+    routeHandler(val) {
+      let routerList = ["home", "category", "cart", "usercenter"];
+
+      if (routerList.indexOf(val) > -1) {
+        this.$router.push({ name: val });
+        this.selected = val;
       }
-      this.$set("selected", val);
     }
   }
 };

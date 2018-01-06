@@ -1,19 +1,21 @@
 <template>
     <div class="app-page">
         <router-view></router-view>
-        <navbar></navbar>
+        <Navbar/>
     </div>
 </template>
 
 <script>
 import Navbar from "./components/_layouts/Navbar.vue";
+import { AppRouter } from './router';
 
 export default {
     el: '#app',
+    name: 'app-root',
+    router: AppRouter,
     components: {
         Navbar
     },
-    replace: false,
     data() {
         return {
         user: ""

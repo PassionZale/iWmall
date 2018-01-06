@@ -1,42 +1,48 @@
 <template>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(banner, index) in banners" :key={index}>
-                <a :href="banner.redirect_url">
-                    <img :src="banner.img_url"/>
-                </a>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div
+        class="swiper-slide"
+        v-for="banner in banners"
+        :key="banner.img_url"
+      >
+        <a :href="banner.redirect_url">
+            <img :src="banner.img_url"/>
+        </a>
+      </div>
+      </div>
+      <div class="swiper-pagination"></div>
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      banners: ""
+      banners: []
     };
   },
   created() {
     this.fetchBanner();
   },
   methods: {
-    fetchBanner: function() {
-      let vm = this;
-      this.$http.get("/api/banners").then(function(response) {
-        vm.$set("banners", response.data);
-        vm.$nextTick(function() {
-          let swiper = new Swiper(".swiper-container", {
-            autoplay: 4000,
-            loop: true,
-            resizeReInit: true,
-            pagination: ".swiper-pagination",
-            observer: true,
-            observeParents: true
-          });
+    fetchBanner() {
+      this.$http
+        .get("/api/banners")
+        .then(resp => resp.data)
+        .then(data => {
+          this.banners = data;
         });
-      });
     }
+  },
+  mounted() {
+    let swiper = new Swiper(".swiper-container", {
+      autoplay: 4000,
+      loop: true,
+      resizeReInit: true,
+      pagination: ".swiper-pagination",
+      observer: true,
+      observeParents: true
+    });
   }
 };
 </script>
