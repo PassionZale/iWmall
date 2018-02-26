@@ -10,37 +10,32 @@
     <meta name="author" content="Zhang Lei">
     <meta name="description" content="微信商城：iMall,基于Laravel5.2和vue.js">
     <meta name="keywords" content="微信商城,laravel5.2,vue.js,vuex,vue-router,vue-resource">
-    <!-- Favicon -->
     <link rel="icon" href="{{asset('favicon.png')}}" mce_href="{{asset('favicon.png')}}" type="image/png">
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" mce_href="{{asset('favicon.ico')}}" type=”image/x-icon”>
 
-    <!--[if lte IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-    <![endif]-->
-
-    <!-- Styles -->
-    <link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
-    <link href="{{asset('js/lib/mint-ui/mint-ui.css')}}" rel="stylesheet">
-    <link href="//cdn.bootcss.com/Swiper/3.4.0/css/swiper.min.css" rel="stylesheet">
+    <link href="{{asset('css/normalize.css')}}" rel="stylesheet">
     <link href="{{asset('css/mall.css')}}" rel="stylesheet">
-    <style>
-        input,i, select, textarea, button:focus {
-            outline: 0 none !important;
-        }
-        a,i,button,input,li,span{-webkit-tap-highlight-color:rgba(255,0,0,0);}
-    </style>
+    
+    <script>
+        window.csrfToken = "<?php echo csrf_token(); ?>";
+    </script>
 </head>
 <body>
+<div class="app-root" id="app"></div>
+
 <!-- JavaScripts -->
-<script src="{{ asset('js/lib/jquery/jquery-2.1.1.min.js') }}"></script>
-<script src="{{ asset('js/lib/distpicker/distpicker.min.js') }}"></script>
-<script src="//cdn.bootcss.com/Swiper/3.4.0/js/swiper.min.js"></script>
-<script src="{{ asset('js/mall/app.js') }}"></script>
+<script src="{{ asset('js/external/jquery-2.1.1.min.js') }}"></script>
+<script src="{{ asset('js/external/distpicker.min.js') }}"></script>
+
+<script src="{{ asset('js/mall/index.js') }}"></script>
+
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<!-- wx jssdk config -->
 <script>
-    <?php if($js){ ?>
-        wx.config(<?php echo $js->config([], FALSE) ?>);
+    <?php if($config){ ?>
+        wx.config(<?php echo $config; ?>);
     <?php }?>
 </script>
+<!-- wx jssdk config end -->
 </body>
 </html>

@@ -17,13 +17,8 @@ class IndexController extends Controller
 
     public function index()
     {
-        $app_env = env('APP_ENV');
-        if($app_env != 'beta'){
-            $wechat = app('wechat');
-            $js = $wechat->js;
-        }else{
-            $js = FALSE;
-        }
-        return view('mall.index')->with(['js'=>$js]);
+        $app = app('wechat.official_account');
+        $config = $app->jssdk->buildConfig(array('onMenuShareQQ', 'onMenuShareWeibo'), $debug = false, $beta = false, $json = true);
+        return view('mall.index')->with(['config'=>$config]);
     }
 }

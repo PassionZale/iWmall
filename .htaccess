@@ -1,0 +1,4 @@
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+#RewriteRule ^ index.php [L]
+RewriteRule ^(.*)$ public/$1 [L]

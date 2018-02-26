@@ -48,7 +48,8 @@ Route::get('/wechat/debug', 'WechatController@debug');
 Route::any('/wechat', 'WechatController@serve');
 
 // 微信商城
-Route::group(['prefix' => 'mall', 'middleware' => ['web', 'wechat.oauth'], 'namespace' => 'Mall'], function () {
+// Route::group(['prefix' => 'mall', 'middleware' => ['web', 'wechat.oauth'], 'namespace' => 'Mall'], function () {
+Route::group(['prefix' => 'mall/', 'namespace' => 'Mall'], function () {
     // Wechat OAuth2.0 (type=snsapi_userinfo)
     Route::get('/user', 'IndexController@oauth');
     // 首页
@@ -56,6 +57,8 @@ Route::group(['prefix' => 'mall', 'middleware' => ['web', 'wechat.oauth'], 'name
 });
 
 Route::group(['prefix' => 'api', 'middleware' => 'web', 'namespace' => 'Api'], function () {
+    // get goods list
+    Route::get('goods', 'ShopController@getGoods');
     // 获取用户信息
     Route::get('userinfo', 'UserController@userinfo');
     // 商铺配置

@@ -1,4 +1,5 @@
 <template>
+<div class="app-page">
     <div id="sequence-container">
         <ul>
             <li :class="{'active' : sortKey === 'timeDown'}" @click="sortByTime()">新品</li>
@@ -11,32 +12,31 @@
         </ul>
     </div>
     <router-view :sort-key="sortKey"></router-view>
+</div>
 </template>
 
 <script>
-    export default{
-        data(){
-            return{
-                sortKey:'',
-                commodities:''
-            }
-        },
-        methods:{
-            sortByTime:function(){
-                this.$set('sortKey','timeDown');
-            },
-            sortBySold:function(){
-                this.$set('sortKey','soldDown');
-            },
-            sortByPrice:function(){
-                if(this.sortKey !== 'priceUp'){
-                    this.$set('sortKey','priceUp');
-                }else{
-                    this.$set('sortKey','priceDown');
-                }
-            }
-        }
+export default {
+  data() {
+    return {
+      sortKey: "",
+      commodities: ""
+    };
+  },
+  methods: {
+    sortByTime: function() {
+      this.$set("sortKey", "timeDown");
+    },
+    sortBySold: function() {
+      this.$set("sortKey", "soldDown");
+    },
+    sortByPrice: function() {
+      if (this.sortKey !== "priceUp") {
+        this.$set("sortKey", "priceUp");
+      } else {
+        this.$set("sortKey", "priceDown");
+      }
     }
-
-
+  }
+};
 </script>

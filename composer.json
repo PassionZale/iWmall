@@ -7,9 +7,9 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "overtrue/laravel-wechat": "~3.0",
         "lavary/laravel-menu": "^1.6",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "overtrue/laravel-wechat": "~4.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

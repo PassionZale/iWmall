@@ -24,4 +24,5 @@ nbproject/
 /node_modules
 /public/storage
 .gitignore
-public/js/mall/
+public/js/mall/*.map
+public/css/*.map
